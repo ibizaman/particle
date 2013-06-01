@@ -13,5 +13,8 @@ x(#position{x = X}) ->
 y(#position{y = Y}) ->
     Y.
 
+move(#position{x = X, y = Y}, D)  ->
+    new(X + vector:x(D), Y + vector:y(D)).
+
 distance(#position{x = Ax, y = Ay}, #position{x = Bx, y = By}) ->
     math:sqrt(math:pow(Ax-Bx, 2) + math:pow(Ay-By, 2)).
