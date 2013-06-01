@@ -33,6 +33,7 @@ multiply(#vector{x = X, y = Y}, N) ->
 len(#vector{x = X, y = Y}) ->
     math:sqrt(X*X + Y*Y).
 
+% Returns the given vector with a unit length
 unitLength(V=#vector{x = X, y = Y}) ->
     Length = len(V),
     new(X/Length, Y/Length).

@@ -13,6 +13,7 @@ x(#position{x = X}) ->
 y(#position{y = Y}) ->
     Y.
 
+% Move a position to another thanks to a vector
 move(#position{x = X, y = Y}, D)  ->
     new(X + vector:x(D), Y + vector:y(D)).
 

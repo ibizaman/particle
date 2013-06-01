@@ -24,6 +24,7 @@ add(ForceA, ForceB) ->
     Vector = vector:add(direction(ForceA), direction(ForceB)),
     new(vector:unitLength(Vector), vector:len(Vector)).
 
+% Helper function to compute a force between two positions
 compute(ForceType, {PositionA, PropertiesA}, {PositionB, PropertiesB}) ->
     Vector = vector:fromTo(PositionA, PositionB),
     Distance = position:distance(PositionA, PositionB),
