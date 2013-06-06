@@ -21,8 +21,11 @@ invertDirection(Force) ->
     Force#force{direction = vector:negate(direction(Force))}.
 
 add(ForceA, ForceB) ->
-    Vector = vector:add(direction(ForceA), direction(ForceB)),
+    Vector = vector:add(asVector(ForceA), asVector(ForceB)),
     new(vector:unitLength(Vector), vector:len(Vector)).
+
+asVector(Force) ->
+    vector:multiply(direction(Force), intensity(Force)).
 
 % Helper function to compute a force between two positions
 compute(ForceType, {PositionA, PropertiesA}, {PositionB, PropertiesB}) ->
